@@ -1,0 +1,29 @@
+<!--
+<md-toolbar layout="row" layout-align="center center">
+
+  <md-button href="https://github.com/Swiip/generator-gulp-angular">Angular Gist SPA</md-button>
+
+</md-toolbar>
+-->
+
+<md-autocomplete flex
+            md-input-name="autocompleteField"
+            md-input-minlength="2"
+            md-no-cache="vm.noCache"
+            md-selected-item="vm.selectedItem"
+            md-search-text="vm.searchText"
+            md-items="item in vm.querySearch(vm.searchText)"
+            md-item-text="item.login"
+            md-require-match
+            md-floating-label="Search for github user" md-dropdown-position="bottom">
+          <md-item-template>
+           <a ui-sref="user({id: item.login})">
+               <img class="avatar" src="{{item.avatar_url}}" alt="user avatar">
+               <span md-highlight-text="vm.searchText">{{item.login}}</span>
+           </a>
+           </md-item-template>
+          <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+            <div ng-message="md-require-match">Please select a user from the list.</div>
+            <div ng-message="minlength">Your entry is not long enough.</div>
+          </div>
+</md-autocomplete>
