@@ -2,23 +2,37 @@
 
     <md-content class="page-content user-page">
         <header>
-            <md-toolbar layout="row" layout-align="center center">Angular Gist SPA</md-toolbar>
+            <a href="/"><md-toolbar layout="row" layout-align="center center">Angular Gist SPA</md-toolbar></a>
         </header>
 
 
         <md-card md-colors="::{backgroundColor: 'default-primary-700'}">
             <md-card-title>
                 <md-card-title-media>
-                    <div class="md-media-sm card-media" layout md-colors="::{background: 'default-accent'}">
+                    <div class="md-media-sm card-media" layout md-colors="::{background: 'default-accent'}" style="background-image: url('{{user.avatar}}')">
                         <md-icon md-svg-icon="person"></md-icon>
                     </div>
                 </md-card-title-media>
                 <md-card-title-text>
-                    <span class="md-headline">{{id}}</span>
-                    <span class="md-subhead description">This card is colored according the default theme</span>
+                    <span class="md-headline">{{user.name}}'s gist</span>
+                    <span class="md-subhead description">{{user.location}}</span>
                 </md-card-title-text>
             </md-card-title>
         </md-card>
+
+        <md-card>
+            <md-input-container class="md-block">
+                <label>Gist Description</label>
+                <input ng-model="user.gistDesc">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Gist Content</label>
+                <textarea ng-model="user.gistCont" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+            </md-input-container>
+        </md-card>
+        
+        <md-button class="md-raised md-primary" ng-click="user.saveUserGist()">Save</md-button>
+        <a href="/"><md-button class="md-raised back-btn">Go Back</md-button></a>
     </md-content>
 
 </div>

@@ -17,7 +17,7 @@
             md-require-match
             md-floating-label="Search for github user" md-dropdown-position="bottom">
           <md-item-template>
-           <a ui-sref="user({id: item.login})">
+           <a class="autocomplete-option" ui-sref="user({id: item.login})">
                <img class="avatar" src="{{item.avatar_url}}" alt="user avatar">
                <span md-highlight-text="vm.searchText">{{item.login}}</span>
            </a>

@@ -3,8 +3,12 @@ aspa-searchbox {
     md-autocomplete {
         font-size: 3em;
         margin: 2em 0;
+        md-input-container[ng-if="floatingLabel"] {
+            >label {
+                text-align: left;
+            }
+        }
     }
-
 }
 
 ul.md-autocomplete-suggestions {
@@ -16,4 +20,10 @@ ul.md-autocomplete-suggestions {
         vertical-align: middle;
     }
 
+}
+
+a.autocomplete-option {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
 }
