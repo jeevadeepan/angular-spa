@@ -9,6 +9,7 @@ export class UserController {
         this.git = git;
         this.loadUser(this.id);
         this.loadUserGist(this.id);
+        this.homepage = $window.location.href.indexOf('angular-spa') > -1 ? '/angular-spa' : '/';
     }
 
     loadUser(id) {

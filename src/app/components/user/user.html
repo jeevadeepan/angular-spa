@@ -2,7 +2,7 @@
 
     <md-content class="page-content user-page">
         <header>
-            <a href="/"><md-toolbar layout="row" layout-align="center center">Angular Gist SPA</md-toolbar></a>
+            <a href="{{user.homepage}}"><md-toolbar layout="row" layout-align="center center">Angular Gist SPA</md-toolbar></a>
         </header>
 
 
@@ -32,7 +32,7 @@
         </md-card>
         
         <md-button class="md-raised md-primary" ng-click="user.saveUserGist()">Save</md-button>
-        <a href="/"><md-button class="md-raised back-btn">Go Back</md-button></a>
+        <a href="{{user.homepage}}"><md-button class="md-raised back-btn">Go Back</md-button></a>
     </md-content>
 
 </div>
