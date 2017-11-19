@@ -4,9 +4,17 @@ aspa-searchbox {
         font-size: 3em;
         margin: 2em 0;
         md-input-container[ng-if="floatingLabel"] {
-            >label {
+            > label {
                 text-align: left;
             }
+            > input[type="search"] {
+                height: 1.4em;
+                position: relative;
+                bottom: 0.5em;
+            }
+        }
+        md-progress-linear {
+            top: 1.3em;
         }
     }
 }
